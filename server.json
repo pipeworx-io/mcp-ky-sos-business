@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/ky-sos-business",
+  "title": "Ky Sos Business",
+  "description": "ky-sos-business -- the Kentucky Secretary of State Business Entity Search, searched live per…",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/ky-sos-business",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-ky-sos-business",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/ky-sos-business/mcp"
+    }
+  ]
+}

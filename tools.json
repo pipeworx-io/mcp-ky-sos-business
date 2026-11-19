@@ -1,0 +1,42 @@
+[
+  {
+    "name": "ky_search_businesses",
+    "description": "Search the Kentucky Secretary of State Business Entity Search by entity name. Returns each entity's file_number (its organization number), name, status (e.g. A - Active, I - Inactive) and company type. Tolerant of case, punctuation, \"&\" vs \"and\" and the legal-form spelling (Inc / Incorporated, LLC / L.L.C.): each row carries match = exact | legal_form_variant | name_prefix, ranked in that order, and hits counts only the exact and legal_form_variant rows. The register returns at most 50 rows a page and this tool reads the first page; total_in_register says how many the register counted. Entity-level only: no individuals' names (registered agents and officers are not returned). Pass a row's file_number as org_number to ky_get_business for detail.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Entity name or the start of it, e.g. \"Brown-Forman\"."
+        },
+        "active_only": {
+          "type": "boolean",
+          "description": "Only active entities. Default false (all statuses)."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Maximum rows (1-50, default 25)."
+        }
+      },
+      "required": [
+        "name"
+      ]
+    }
+  },
+  {
+    "name": "ky_get_business",
+    "description": "Detail for one Kentucky Secretary of State business entity by its organization number (from ky_search_businesses): name, profit or non-profit, company type, status, standing, file date, organization date, last annual report, principal office address and how it is managed. Entity-level only: the registered agent and officers are not returned.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "org_number": {
+          "type": "string",
+          "description": "Kentucky organization number, e.g. \"0521203\"."
+        }
+      },
+      "required": [
+        "org_number"
+      ]
+    }
+  }
+]

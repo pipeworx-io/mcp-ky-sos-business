@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-ky-sos-business",
+  "version": "0.1.0",
+  "description": "ky-sos-business -- the Kentucky Secretary of State Business Entity Search, searched live per request (fleet #4425). Entity-level data only: no individuals' names (the registered agent and officers are left out), no bulk copy.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-ky-sos-business": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "ky-sos-business"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-ky-sos-business.git"
+  },
+  "mcpName": "io.github.pipeworx-io/ky-sos-business",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "ky-sos-business",
+    "gatewaySlug": "ky-sos-business",
+    "sourceHash": "v1-67eeadc3f0453bf8828acb54feae9421b328df139a28df77364ce90c26bf19f9",
+    "sourceCommit": "008fadad76a1efa1a48d1b9ec76e8325b7c5d379"
+  }
+}
